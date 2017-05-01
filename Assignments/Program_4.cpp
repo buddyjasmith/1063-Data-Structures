@@ -196,7 +196,7 @@ public:
             cout << "*" ;
         cout << endl;
         for (int i = 0; i < Rows; i++){
-            cout << i << " ";
+            cout << "*";
             for (int j = 0; j < Cols; j++){
                 if (Board[i][j] == 1)
                     cout << char('X');
@@ -339,8 +339,8 @@ public:
                         Board2[i][j] = 1;
                     }
                     if (CheckCorner(i, j)) {
-						          Board2[i][j] = -1;
-						          Stable = true;
+						Board2[i][j] = -1;
+						Stable = true;
 					}
                 }
             }
@@ -348,6 +348,7 @@ public:
             Pause(500);
             if(Stable==false)
                 break;
+
             clear_screen();
             PrintBoard();
             g++;
